@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+  integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles.css">
   <script defer src="./app.js"></script>
   <title>draw_app</title>
 </head>
 <body>
-  <canvas></canvas>
-  <input type="range" id="line-width" max="10" min="1" value="5"/>
-  <input type="color" id="color">
+  <div class="cnavas-container">
+    <canvas></canvas>
+  </div>
+  <div class="select-option">
+    <input type="range" id="line-width" max="10" min="1" value="5"/>
+    <input type="color" id="color">
+    <button id="mode-btn">채우기</button>
+    <button id="destroy-btn">초기화</button>
+    <button id="eraser-btn">지우기</button>
+    <button id="save">저장하기</button>
+  </div>
+  <input type="text" placeholder="글자 입력 후 추가할 위치에 더블클릭" id="text"/>
   <div class="color-container">
     <div
       class="color-option"
@@ -74,10 +86,5 @@
       data-color="#e67e22"
     ></div>
   </div>
-  <button id="mode-btn">채우기</button>
-  <button id="destroy-btn">초기화</button>
-  <button id="eraser-btn">지우기</button>
-  <input type="text" placeholder="입력 후 더블클릭" id="text"/>
-  <button id="save">저장하기</button>
 </body>
 </html>

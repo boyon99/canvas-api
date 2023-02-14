@@ -4,22 +4,29 @@ const ctx = canvas.getContext("2d"); // 캔버스에 그림을 그릴 때 사용
 canvas.width = 500;
 canvas.height = 500;
 
-let isPainting = false
-
 // line-width
 const lineWidth = document.getElementById("line-width")
 ctx.lineWidth = lineWidth.value
 
 function onLineWidthChange(e){
   ctx.lineWidth = e.target.value
-
 }
 
 lineWidth.addEventListener("change", onLineWidthChange)
 
 
+// color
+const color = document.getElementById("color")
+color.addEventListener("change", onColorChange)
 
-// mouse move
+function onColorChange(e){
+  ctx.strokeStyle = e.target.value
+  ctx.fillStyle = e.target.value
+}
+
+// palette
+let isPainting = false
+
 function onMove(e){
   if(isPainting){
     ctx.lineTo(e.offsetX,e.offsetY)

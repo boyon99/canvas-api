@@ -3,6 +3,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d"); // 캔버스에 그림을 그릴 때 사용한다.
 canvas.width = 500;
 canvas.height = 500;
+ctx.lineCap = "round"; // 선의 끝을 지정
 
 // line-width
 const lineWidth = document.getElementById("line-width")
@@ -104,3 +105,19 @@ canvas.addEventListener('mousedown', startPainting)
 canvas.addEventListener('mouseup', cancelPainting)
 canvas.addEventListener('mouseleave', cancelPainting)
 canvas.addEventListener('click', onCanvasClick)
+
+
+// add text
+const textInput = document.getElementById("text")
+canvas.addEventListener('dblclick', onDoubleClick)
+
+function onDoubleClick(e){
+  const text = textInput.value;
+  if (text !== "") {
+    ctx.save(); // 현재상태, 색상, 스타일 등 모든 것을 저장함
+    ctx.lineWidth = 1;
+    ctx.font = "40px serif";
+    ctx.fillText(text, e.offsetX, e.offsetY);
+    ctx.restore(); // 이 사이의 값들은 저장되지 않음
+  }
+}

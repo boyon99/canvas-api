@@ -121,3 +121,16 @@ function onDoubleClick(e){
     ctx.restore(); // 이 사이의 값들은 저장되지 않음
   }
 }
+
+// save
+const saveBtn = document.getElementById('save')
+saveBtn.addEventListener("click", onSaveClick)
+
+function onSaveClick(e){
+  const url = canvas.toDataURL() // canvas data url
+  const a = document.createElement('a')
+  a.href = url
+  a.download = "myDrawing.png"
+  a.click()
+}
+

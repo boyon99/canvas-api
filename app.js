@@ -24,6 +24,16 @@ function onColorChange(e){
   ctx.fillStyle = e.target.value
 }
 
+// color options
+const colorOptions = Array.from(document.getElementsByClassName('color-option')) // document는 배열이 아니므로 배열로 변경
+colorOptions.forEach(color=>color.addEventListener('click',onColorClick))
+
+function onColorClick(e){
+  ctx.strokeStyle = e.target.dataset.color
+  ctx.fillStyle = e.target.dataset.color
+  color.value = e.target.dataset.color
+}
+
 // palette
 let isPainting = false
 

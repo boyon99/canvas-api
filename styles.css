@@ -1,0 +1,11 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+}

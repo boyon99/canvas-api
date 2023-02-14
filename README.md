@@ -1,4 +1,7 @@
-## [canvas api](https://developer.mozilla.org/ko/docs/Web/API/Canvas_API)
+## canvas api
+[배포페이지](https://drawing-ruby.vercel.app/)
+
+
 #### html에 `canvas`를 추가한 후 js에 속성을 추가한다.
 ```js
 const canvas = document.querySelector("canvas");

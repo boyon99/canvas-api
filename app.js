@@ -50,6 +50,27 @@ function onModeClick(e) {
   }
 }
 
+// eraser
+const eraserBtn = document.getElementById('eraser-btn')
+
+eraserBtn.addEventListener('click', onEraserClick)
+
+function onEraserClick(){
+  ctx.strokeStyle = "white"
+  isFilling = false
+  modeBtn.innerText = "채우기";
+}
+
+// destroy
+const destroyBtn = document.getElementById("destroy-btn");
+
+function onDestroyClick() {
+  ctx.fillStyle = "white";
+  ctx.fillRect(0, 0, 500, 500);
+}
+
+destroyBtn.addEventListener("click", onDestroyClick);
+
 // palette
 let isPainting = false
 
